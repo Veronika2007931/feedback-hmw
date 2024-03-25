@@ -1,9 +1,9 @@
-import { Statistic } from "./Statistic/Statistic";
+import { Page } from "./Statistic/Page";
 
 export const App = () => {
   return (
     <div>
-         <Statistic/> 
+         <Page/> 
     </div>
   );
 };

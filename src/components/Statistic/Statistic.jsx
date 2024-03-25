@@ -1,46 +1,22 @@
-import {Component} from "react"
-import {Button} from "./Button.jsx"
-import {Section} from "./Section"
 
 
-export class Statistic extends Component{
+export function Statistic({isGood, isNeutral, isBad, total}){
 
-    state = {
-        good: 0,
-        neutral: 0,
-        bad: 0
-      }
+   
+    const percentage = ()=>{
+     return (isGood*100)/total
+    }
 
-      addGoodFeedback=()=>{
-         this.setState((prevState)=>{
-        return {good:prevState  + 1}})
-         
-      }
-      addNeutralFeedback=(prevState)=>{
-        this.setState({neutral: prevState + 1})
-     }
-     addBadFeedback=(prevState)=>{
-        this.setState({bad: prevState + 1})
-     }
-
-render(){
     return(
         <div>
-            <h2>Plese leave feedback</h2>
-            <Button
-             onAddingGood={this.addGoodFeedback}
-             onAddingNeutral = {this.addNeutralFeedback}
-             onAddingBad = {this.addBadFeedback}
-            />
-            <Section 
-            isGood={this.state.good}
-            isNeutral={this.state.neutral}
-            isBad={this.state.bad}
-            />
-            
+           <h2>Statistic</h2> 
+           <ul>
+            <li>Good:{isGood}</li>
+            <li>Neutral:{isNeutral}</li>
+            <li>Bad:{isBad}</li>
+            <li>Total: {total}</li>
+            <li>Positive feedback: {percentage()} %</li>
+           </ul>
         </div>
     )
-}
-
-
 }

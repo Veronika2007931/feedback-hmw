@@ -1,6 +1,6 @@
 
 
-export function Button({onAddingGood, onAddingNeutral, onAddingBad}){
+export function FeedbackOptions({onAddingGood, onAddingNeutral, onAddingBad}){
 
 
     return(
